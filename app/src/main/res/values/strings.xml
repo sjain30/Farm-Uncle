@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Farm Uncle</string>
+    <string name="menu_shop">Shop</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_orders">My Orders</string>
+    <string name="menu_cart">Cart</string>
 </resources>
