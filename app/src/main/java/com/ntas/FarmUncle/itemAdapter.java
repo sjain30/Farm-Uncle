@@ -30,7 +30,7 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ViewHolder> {
 
     private Context context;
 
-    private String product_list[] = {"Product 1", "Product 2", "Product 3", "Product 4"};
+    private String[] product_list = {"Product 1", "Product 2", "Product 3", "Product 4"};
 
 
 

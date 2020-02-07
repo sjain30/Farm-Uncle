@@ -26,7 +26,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private Context context;
 
-    private String catergory_list[] = {"Category 1", "Category 2", "Category 3", "Category 4"};
+    private String[] catergory_list = {"Category 1", "Category 2", "Category 3", "Category 4"};
 
 
 
