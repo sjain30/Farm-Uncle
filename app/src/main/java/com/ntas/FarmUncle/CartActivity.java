@@ -23,7 +23,6 @@ public class CartActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 switch (item.getItemId()){
                     case R.id.nav_order:
                         startActivity(new Intent(getApplicationContext(),MyOrdersActivity.class));
