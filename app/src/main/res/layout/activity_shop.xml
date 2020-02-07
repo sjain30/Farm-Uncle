@@ -136,6 +136,7 @@
                 <androidx.recyclerview.widget.RecyclerView
 
                     android:id="@+id/itemRecyclerView"
+                    android:overScrollMode="never"
 
                     android:layout_width="match_parent"
 
