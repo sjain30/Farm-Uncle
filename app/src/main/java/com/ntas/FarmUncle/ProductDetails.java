@@ -2,36 +2,47 @@ package com.ntas.FarmUncle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MyOrdersActivity extends AppCompatActivity {
+public class ProductDetails extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter recyclerAdapter;
-    public static MyOrders[] orders = {new MyOrders(1,100,2, R.drawable.cookies,"Cash", "In transit", "Cookies", "Fresh Oat Cookies"),
-            new MyOrders(2,100, 3, R.drawable.sandwich,"PayTm", "Delivered", "Sandwhich", "Vegetable Sandwhich"),
-            new MyOrders(3,150, 4, R.drawable.pancakes,"Debit Card", "Delivered", "Pancakes", "Soft pancakes with maple syrup")};
+    private TextView id, amount, status, method, name, qty, description;
+    private ImageView imageView;
+    private static final String position ="Position";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_orders);
-
+        setContentView(R.layout.activity_product_details);
+        Intent intent = getIntent();
+        int pos = intent.getExtras().getInt(position);
         BottomNavigationView bottomNavigationView =  findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_order);
 
-        recyclerView =findViewById(R.id.ordersRecyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerAdapter= new OrdersAdapter(this);
-        recyclerView.setAdapter(recyclerAdapter);
+        id = findViewById(R.id.orderId);
+        amount = findViewById(R.id.amount);
+        status = findViewById(R.id.status);
+        method = findViewById(R.id.PaymentMethod);
+        name = findViewById(R.id.name);
+        qty = findViewById(R.id.quantity);
+        description = findViewById(R.id.description);
+        imageView = findViewById(R.id.imageView4);
+
+        id.setText("Order Id: "+Integer.toString(MyOrders.orders[pos].getOrderId()));
+        amount.setText("Order Amount: "+MyOrders.orders[pos].getOrderAmount());
+        status.setText("Delivery Status: "+MyOrders.orders[pos].getStatus());
+        method.setText("Payment Method: "+MyOrders.orders[pos].getPaymentMethod());
+        name.setText(MyOrders.orders[pos].getProductName());
+        qty.setText("Quantity: "+MyOrders.orders[pos].getQuantity());
+        description.setText(MyOrders.orders[pos].getProductDescription());
+        imageView.setImageResource(MyOrders.orders[pos].getImageResource());
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -59,11 +70,5 @@ public class MyOrdersActivity extends AppCompatActivity {
                 return false;
             }
         });
-    }
-
-    public void productDetails()
-    {
-        Intent intent = new Intent(MyOrdersActivity.this,ProductDetails.class);
-        startActivity(intent);
     }
 }

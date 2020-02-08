@@ -33,6 +33,10 @@
         android:layout_above="@id/bottom_navigation">
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ordersRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </RelativeLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
