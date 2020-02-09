@@ -38,7 +38,7 @@ public class CartActivity extends AppCompatActivity {
 
         productList.add(new Product(
                 1,
-                "3",
+                "Qty: 3",
                 "Onions",
                 "₹20/-",
                 "₹45/-",
