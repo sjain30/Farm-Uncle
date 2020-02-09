@@ -14,7 +14,8 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".CartActivity" />
         <activity android:name=".MyOrdersActivity" />
-        <activity android:name=".ShopActivity">
+        <activity android:name=".ShopActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
