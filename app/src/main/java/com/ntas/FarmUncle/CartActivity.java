@@ -42,7 +42,7 @@ public class CartActivity extends AppCompatActivity {
                 "Onions",
                 "₹20/-",
                 "₹45/-",
-                R.drawable.profile
+                R.drawable.onion
         ));
 
         adapter = new ProductAdapter(this,productList);
