@@ -19,7 +19,7 @@
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/profile"/>
+            android:src="@drawable/onion"/>
 
         <TextView
             android:id="@+id/product_title"
@@ -58,7 +58,7 @@
         <View
             android:id="@+id/divider"
             android:layout_width="0dp"
-            android:layout_height="1dp"
+            android:layout_height="2dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintBottom_toBottomOf="@id/cutted_price"
             app:layout_constraintEnd_toEndOf="@id/cutted_price"
