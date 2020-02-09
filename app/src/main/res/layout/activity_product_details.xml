@@ -151,7 +151,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/productCard"
-            android:backgroundTint="#A39999"
+            android:backgroundTint="@color/greyishWhite"
             android:text="Cancel Order" />
     </RelativeLayout>
 
