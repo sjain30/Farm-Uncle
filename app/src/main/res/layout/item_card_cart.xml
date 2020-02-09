@@ -105,6 +105,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:drawableStart="@drawable/delete"
                 android:drawablePadding="4dp"
                 android:gravity="center"
