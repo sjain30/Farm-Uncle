@@ -35,12 +35,12 @@ public class ProductDetails extends AppCompatActivity {
         description = findViewById(R.id.description);
         imageView = findViewById(R.id.imageView4);
 
-        id.setText("Order Id: "+Integer.toString(MyOrders.orders[pos].getOrderId()));
-        amount.setText("Order Amount: "+MyOrders.orders[pos].getOrderAmount());
-        status.setText("Delivery Status: "+MyOrders.orders[pos].getStatus());
-        method.setText("Payment Method: "+MyOrders.orders[pos].getPaymentMethod());
+        id.setText(String.format("Order Id: %s",Integer.toString(MyOrders.orders[pos].getOrderId())));
+        amount.setText(String.format("Order Amount: %s",MyOrders.orders[pos].getOrderAmount()));
+        status.setText(String.format("Delivery Status: %s",MyOrders.orders[pos].getStatus()));
+        method.setText(String.format("Payment Method: %s",MyOrders.orders[pos].getPaymentMethod()));
         name.setText(MyOrders.orders[pos].getProductName());
-        qty.setText("Quantity: "+MyOrders.orders[pos].getQuantity());
+        qty.setText(String.format("Quantity: %s",MyOrders.orders[pos].getQuantity()));
         description.setText(MyOrders.orders[pos].getProductDescription());
         imageView.setImageResource(MyOrders.orders[pos].getImageResource());
 
