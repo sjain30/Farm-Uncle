@@ -3,15 +3,14 @@ package com.ntas.FarmUncle;
 public class Product {
     private int id,qty;
     private String title;
-    private double price,rating,cuttedPrice;
+    private double price,cuttedPrice;
     private int image;
 
-    public Product(int id, int qty, String title, double price, double rating, double cuttedPrice, int image) {
+    public Product(int id, int qty, String title, double price, double cuttedPrice, int image) {
         this.id = id;
         this.qty = qty;
         this.title = title;
         this.price = price;
-        this.rating = rating;
         this.cuttedPrice = cuttedPrice;
         this.image = image;
     }
@@ -46,14 +45,6 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public double getRating() {
-        return rating;
-    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
     }
 
     public double getCuttedPrice() {

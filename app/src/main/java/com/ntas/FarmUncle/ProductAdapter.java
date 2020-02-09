@@ -42,10 +42,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProdctVi
 
     class ProdctViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView price,cuttedPrice,qty,title,rating;
+        TextView price,cuttedPrice,qty,title;
         public ProdctViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.product_image);
+            price = itemView.findViewById(R.id.product_price);
+            cuttedPrice = itemView.findViewById(R.id.cutted_price);
+            qty = itemView.findViewById(R.id.product_quantity);
+            title = itemView.findViewById(R.id.product_title);
         }
     }
 }
