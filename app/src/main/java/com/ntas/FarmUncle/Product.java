@@ -1,12 +1,14 @@
 package com.ntas.FarmUncle;
 
+import android.widget.ImageView;
+
 public class Product {
-    private int id,qty;
+    private int id;
     private String title;
-    private double price,cuttedPrice;
+    private String qty, price,cuttedPrice;
     private int image;
 
-    public Product(int id, int qty, String title, double price, double cuttedPrice, int image) {
+    public Product(int id, String qty, String title, String price, String cuttedPrice, int image) {
         this.id = id;
         this.qty = qty;
         this.title = title;
@@ -23,11 +25,11 @@ public class Product {
         this.id = id;
     }
 
-    public int getQty() {
+    public String getQty() {
         return qty;
     }
 
-    public void setQty(int qty) {
+    public void setQty(String qty) {
         this.qty = qty;
     }
 
@@ -39,19 +41,19 @@ public class Product {
         this.title = title;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public double getCuttedPrice() {
+    public String getCuttedPrice() {
         return cuttedPrice;
     }
 
-    public void setCuttedPrice(double cuttedPrice) {
+    public void setCuttedPrice(String cuttedPrice) {
         this.cuttedPrice = cuttedPrice;
     }
 

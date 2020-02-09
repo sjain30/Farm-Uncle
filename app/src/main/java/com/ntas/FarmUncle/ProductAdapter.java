@@ -1,6 +1,7 @@
 package com.ntas.FarmUncle;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProdctViewHolder> {
+public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
     private Context context;
     private List<Product> productList;
@@ -24,26 +25,32 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProdctVi
 
     @NonNull
     @Override
-    public ProdctViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.item_card_cart,null);
-        return new ProdctViewHolder(view);
+        View view = layoutInflater.inflate(R.layout.item_card_cart,parent,false);
+        return new ProductViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProdctViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+        Product product = productList.get(position);
+        holder.title.setText(product.getTitle());
+        holder.price.setText(product.getPrice());
+        holder.cuttedPrice.setText(product.getCuttedPrice());
+        holder.qty.setText(product.getQty());
+        holder.imageView.setImageDrawable(context.getResources().getDrawable(product.getImage(),null));
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return productList.size();
     }
 
-    class ProdctViewHolder extends RecyclerView.ViewHolder {
+    class ProductViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView price,cuttedPrice,qty,title;
-        public ProdctViewHolder(@NonNull View itemView) {
+        public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.product_image);
             price = itemView.findViewById(R.id.product_price);
